@@ -1,0 +1,37 @@
+.overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--overlay-background-color);
+    height: 100%;
+    width: 100%;
+}
+
+/* Buttons */
+.btn
+{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: calc(var(--base-border-radius) / 2);
+    font-size: calc(var(--paragraph-font-size) * 1.1);
+    transition: opacity .15s ease-in;
+
+    &:hover
+    {
+        opacity: .85;
+        transition: opacity .15s ease-in;
+    }
+
+    &:active
+    {
+        transform: scale(.98);
+        transition: none;
+    }
+}
+
+.primary-btn
+{
+    color: var(--primary-btn-text-color);
+    background-color: var(--primary-btn-background-color);
+}

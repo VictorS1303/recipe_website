@@ -26,6 +26,11 @@
     --body-background-color: ;
     --primary-text-color: #fff;
     --secondary-text-color: #32cd32;
+    --overlay-background-color: rgba(0, 0, 0, .6);
+
+    /* Buttons */
+    --primary-btn-text-color: #fff;
+    --primary-btn-background-color: #32cd32;
 
     /* Radii */
     --base-border-radius: 10px;
@@ -89,4 +94,12 @@ a
 li
 {
     list-style: none;
+}
+
+img
+{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
