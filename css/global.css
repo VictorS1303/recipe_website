@@ -24,8 +24,8 @@
         
     /* Colors */
     --body-background-color: ;
-    --primary-text-color: ;
-    --secondry-text-color: ;
+    --primary-text-color: #fff;
+    --secondary-text-color: #32cd32;
 
     /* Radii */
     --base-border-radius: 10px;

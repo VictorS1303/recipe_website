@@ -1,0 +1,47 @@
+nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+    box-shadow: var(--box-shadow);
+
+ 
+    & ul
+    {
+        display: flex;
+        gap: 20px;
+        
+        & li
+        {
+            font-size: var(--heading-five-font-size);  
+            & a
+            {
+                position: relative;
+                    
+
+                &::before
+                {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    width: 0;
+                    border-bottom: 2px solid limegreen;
+                    transition: width .2s ease-in;
+                }
+
+                &:hover::before
+                {
+                    width: 100%;
+                    transition: width .2s ease-in;
+                }
+            }
+        }
+    }
+
+    a
+    {
+        color: var(--secondary-text-color);
+    }
+}
