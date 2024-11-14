@@ -23,9 +23,9 @@
     --paragraph-font-size: clamp(0.8333rem, 0.7754rem + 0.2899vw, 1rem);
         
     /* Colors */
-    --body-background-color: ;
     --primary-text-color: #fff;
     --secondary-text-color: #32cd32;
+    --secondary-background-color: #32cd32;
     --overlay-background-color: rgba(0, 0, 0, .6);
 
     /* Buttons */

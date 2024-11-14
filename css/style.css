@@ -146,14 +146,85 @@ section.meals
 
     & .meal-cards-container
     {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
         position: absolute;
         top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
-        outline: 2px solid #fff;
         height: 500px;
         width: 60vw;
         overflow-x: scroll;
+
+        .meal-card
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 300px;
+            height: fit-content;
+            width: 250px;
+            padding: 20px;
+            border-radius: calc(var(--base-border-radius) / 2);
+            background-color: #fff;
+
+            & header
+            {
+                position: relative;
+
+                & span
+                {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    background-color: var(--secondary-background-color);
+                    padding: 5px;
+                    font-size: var(--paragraph-font-size);
+                    border-radius: calc(var(--base-border-radius) / 2);
+                    color: var(--primary-text-color);
+                }
+
+                & header > div
+                {
+                    position: absolute;
+                    overflow: hidden;
+                }
+
+                & h3
+                {
+                    text-align: center;
+                    margin-top: 5px;
+                    color: var(--secondary-text-color);
+                }
+
+                & p
+                {
+                    text-align: center;
+                    margin-top: 5px;
+                    font-size: calc(var(--paragraph-font-size) / 1.2);
+                }
+            }
+
+
+            & img
+            {
+                border-radius: calc(var(--base-border-radius) / 2);
+            }
+
+            & a
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                width: fit-content;
+                margin-top: 20px;
+            }
+        }
     }
 }
 
