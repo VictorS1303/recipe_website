@@ -34,7 +34,7 @@ nav
                     transition: width .2s ease-in;
                 }
 
-                &:hover::before
+                &:hover:not(.active)::before
                 {
                     width: 100%;
                     transition: width .2s ease-in;
