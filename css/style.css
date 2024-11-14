@@ -88,6 +88,7 @@ nav
 /* Section -> Meals */
 section.meals
 {
+    position: relative;
     height: calc(100vh - 70px);
 
     & .container.meal-search-container
@@ -141,6 +142,18 @@ section.meals
 
             }
         }
+    }
+
+    & .meal-cards-container
+    {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        outline: 2px solid #fff;
+        height: 500px;
+        width: 60vw;
+        overflow-x: scroll;
     }
 }
 
