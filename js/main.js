@@ -4,6 +4,7 @@ const mealCardsContainer = document.querySelector('.meal-cards-container')
 
 // EVENT LISTENERS //
 searchMealInputToggleBtn.addEventListener('click', toggleSearchMealInput)
+searchMealInput.addEventListener('input', (e) => filterMeals(e))
 
 
 // FUNCTIONS //
@@ -15,20 +16,32 @@ function toggleSearchMealInput()
 
 
 // Fetch data from API
-async function fetchMeals() {
-    const response = await fetch('https://dummyjson.com/recipes');
-    const data = await response.json();
+async function fetchMeals()
+{
+    try
+    {
+        const response = await fetch('https://dummyjson.com/recipes')
+        const data = await response.json();
 
-    showMeals(data.recipes); // Assuming `data.recipes` contains an array of meals
+        meals = data.recipes
+        showMeals(meals)
+    }
+    catch (error)
+    {
+        console.error("Error fetching meals:", error);
+    }
 }
-
 
 fetchMeals()
 
 function showMeals(data)
 {
-    data.forEach(meal => {
-        mealCardsContainer.innerHTML += `
+    mealCardsContainer.innerHTML = ""
+    
+    data.forEach((meal) =>
+    {
+        mealCardsContainer.innerHTML +=
+        `
             <article class="meal-card">
                 <header>
                     <span class="cuisine">${meal.cuisine}</span>
@@ -36,10 +49,21 @@ function showMeals(data)
                     <h5>${meal.name}</h5>
                     <p class="preparation-time">${meal.prepTimeMinutes} minutes</p>
                 </header>
-                <a href="#" class="btn primary-btn">
+                <a href=${`meal.html?id=${meal.id}`} class="btn primary-btn">
                     <span>See recipe</span> <i class="fa-solid fa-bowl-food"></i>
                 </a>
             </article>
-        `;
-    });
+        `
+    })
+}
+
+function filterMeals(e) {
+    const searchTerm = e.target.value.toLowerCase();
+
+    const filteredMeals = meals.filter((meal) => 
+        meal.name.toLowerCase().includes(searchTerm) ||
+        meal.cuisine.toLowerCase().includes(searchTerm)
+    );
+
+    showMeals(filteredMeals); // Reuse `showMeals` to display filtered meals
 }
