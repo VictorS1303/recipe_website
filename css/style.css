@@ -154,77 +154,70 @@ section.meals
         top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 500px;
+        height: 400px;
         width: 60vw;
         overflow-x: scroll;
 
-        .meal-card
-        {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 300px;
-            height: fit-content;
-            width: 250px;
-            padding: 20px;
-            border-radius: calc(var(--base-border-radius) / 2);
-            background-color: #fff;
+       .meal-card
+       {
+          display: flex;
+          flex-direction: column;
+          width: 225px;
+          height: 300px;
+          background-color: #fff;
+          padding: 20px;
+          text-align: center;
+          border-radius: calc(var(--base-border-radius) / 2);
 
-            & header
-            {
+          & header
+          {
                 position: relative;
-
+                height: 100px;
+                width: 100%;
+                
                 & span
                 {
                     position: absolute;
-                    top: 5px;
-                    right: 5px;
                     background-color: var(--secondary-background-color);
-                    padding: 5px;
-                    font-size: var(--paragraph-font-size);
+                    top: 10px;
+                    right: 10px;
+                    padding: 2.5px;
                     border-radius: calc(var(--base-border-radius) / 2);
-                    color: var(--primary-text-color);
+                    color: white;
+                    font-size: var(--paragraph-font-size);
                 }
 
-                & header > div
+                & img
                 {
-                    position: absolute;
-                    overflow: hidden;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: calc(var(--base-border-radius) / 2);
                 }
 
-                & h3
+                & h5
                 {
-                    text-align: center;
-                    margin-top: 5px;
-                    color: var(--secondary-text-color);
+                    white-space: break-word;
+                    font-size: var(--paragraph-six-font-size);
+                    margin-top: 10px;
                 }
 
                 & p
                 {
-                    text-align: center;
                     margin-top: 5px;
-                    font-size: calc(var(--paragraph-font-size) / 1.2);
+                    color: #666;
+                    opacity: .7;
                 }
-            }
+          }
 
-
-            & img
-            {
-                border-radius: calc(var(--base-border-radius) / 2);
-            }
-
-            & a
-            {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                width: fit-content;
-                margin-top: 20px;
-            }
-        }
+          & a
+          {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             gap: 10px;
+             margin-top: auto;
+          }
+       }
     }
 }
 
