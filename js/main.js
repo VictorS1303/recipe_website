@@ -5,6 +5,7 @@ const searchMealInputToggleBtn = document.querySelector('.search-meal-input-togg
 // EVENT LISTENERS //
 searchMealInputToggleBtn.addEventListener('click', toggleSearchMealInput)
 
+
 // FUNCTIONS //
 function toggleSearchMealInput()
 {
