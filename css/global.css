@@ -48,6 +48,11 @@ body
 header
 {
     font-family: inherit;
+
+    & > :is(h1, h2, h3, h4, h5, h6)
+    {
+       display: inline-block;
+    }
 }
 
 h1
@@ -91,9 +96,14 @@ a
     text-decoration: none;
 }
 
-li
+ul li
 {
     list-style: none;
+}
+
+ol li
+{
+    list-style: numbers inside;
 }
 
 img

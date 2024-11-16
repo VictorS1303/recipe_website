@@ -221,3 +221,153 @@ section.meals
     }
 }
 
+/* Section -> Single View */
+section.meal
+{
+    position: relative;
+    height: calc(100vh - 70px);
+
+    .chosen-meal-card
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        gap: 30px;
+        background-color: #fff;
+        height: fit-content;
+        width: 80vw;
+        max-width: 800px;
+        padding: 25px;
+        box-shadow: var(--box-shadow);
+        border-radius: var(--base-border-radius);
+
+        & div
+        {
+            position: relative;
+        }
+        
+        & div > button
+        {
+            display: grid;
+            place-content: center;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: var(--heading-four-font-size);
+            background-color: #fff;
+            height: 50px;
+            width: 50px;
+            border-radius: calc(var(--base-border-radius) * 5);
+            cursor: pointer;
+
+            &:active 
+            {
+                i
+                {
+                    text-shadow: none;
+                    transition: none;
+                }
+            }
+
+            &:hover i
+            {
+                text-shadow: var(--text-shadow);
+                transition: text-shadow .2s ease-in;
+            }
+
+            & i
+            {
+                color: var(--secondary-text-color);
+                transition: text-shadow .2s ease-in;                
+            }          
+        }
+
+        & > *
+        {
+            margin: auto;
+            flex: 1;
+        }
+
+        & img
+        {
+            object-fit: cover; 
+            object-position: center;
+            border-radius: var(--base-border-radius);
+            height: 100%;
+        }
+
+        & h3
+        {
+            color: var(--secondary-text-color);
+            margin-top: -30px;
+            white-space: nowrap;
+            font-size: calc(var(--heading-three-font-size) * .8);
+            padding: 15px 0;
+        }
+
+        & .preparing-info-container
+        {
+            height: 300px;
+            overflow-x: scroll;
+        }
+        
+
+        & .preparing-info-container > *
+        {
+            margin-bottom: 30px;            
+        }
+
+        .ingredients
+        {
+            margin-top: 15px;
+
+            & h5
+            {
+                color: var(--secondary-text-color);
+                border-bottom: 2px solid var(--secondary-text-color);
+            }
+
+            & ol
+            {
+                margin-left: 15px;
+                margin-top: 10px;
+
+                & > * + *
+                {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .chosen-meal-card
+    {
+        flex-direction: column;
+        height: 500px;
+      
+
+        & > div:first-child
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & img
+        {
+            width: 100%;
+        }
+
+        & h3
+        {
+            text-align: center;
+        }
+
+       
+    }
+}

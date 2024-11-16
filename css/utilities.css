@@ -13,18 +13,19 @@ a.active
     width: 100%;
 }
 
-.transparent-overlay
-{
+
+.transparent-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
-    backdrop-filter: blur(15px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: 1;
 }
 
 /* Buttons */
-.btn
+.btn:not(.add-to-favorite-btn)
 {
     display: inline-block;
     padding: 10px 15px;
